@@ -43,16 +43,20 @@ By integrating multiple computational approaches, **Protix** provides a research
 
 ## 🛠️ Tech Stack
 
-| Layer | Technologies |
-|-------|--------------|
-| Programming | Python 3.12 |
-| Deep Learning | PyTorch, PyTorch Lightning, HuggingFace Transformers |
-| Graph Modeling | PyTorch Geometric (PyG) |
-| Protein Tools | Biopython, RDKit, OpenMM, PyRosetta |
-| Datasets | ADNI, UniProt, PDB, DrugBank, ChEMBL |
-| Visualization | Matplotlib, Seaborn, PyMol, Plotly |
-| Environment | Jupyter Notebook / Google Colab, Dockerized pipelines |
-| CI/CD & Reproducibility | GitHub Actions, Conda environments, requirements.txt |
+| Layer | Technologies & Approach |
+|-------|------------------------|
+| **Programming** | Python 3.12, TypeScript (frontend interactivity) |
+| **Deep Learning / AI** | PyTorch, PyTorch Lightning, HuggingFace Transformers |
+| **Graph Modeling** | PyTorch Geometric (PyG) for protein-ligand interactions |
+| **Protein & Molecular Tools** | Biopython, RDKit, OpenMM, PyRosetta |
+| **Backend** | FastAPI (model serving & API endpoints), Dockerized pipelines, REST + WebSocket for real-time updates |
+| **Frontend** | React.js, Plotly Dash / Three.js for 3D protein visualization, responsive design, dynamic dashboards |
+| **Data Integration / Multi-Modal** | Protein sequences (UniProt), 3D structures (PDB), Ligand / drug databases (DrugBank, ChEMBL), Clinical / MRI metadata (ADNI), Optional: Speech/text biomarkers (DementiaBank) |
+| **Visualization / Dashboard** | Plotly, Matplotlib, Seaborn, PyMol, 3D interactive dashboards for protein-ligand & multimodal data |
+| **Model Deployment / Serving** | FastAPI endpoints, Docker, GPU-enabled inference, Jupyter/Colab integration |
+| **Reproducibility / CI-CD** | Conda environments, requirements.txt, GitHub Actions, versioned model checkpoints |
+| **Explainable AI (XAI)** | SHAP, LIME, Grad-CAM for protein-ligand and multimodal interpretability |
+
 
 ---
 
