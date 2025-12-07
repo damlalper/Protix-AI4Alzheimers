@@ -1,0 +1,214 @@
+Uzman Seviye Alzheimer Protein Modeling + Drug Discovery AI Projesi
+1️⃣ Proje Konsepti
+
+Amaç: Alzheimer ile ilişkili başlıca proteinler (amyloid-beta, tau, presenilin) için:
+
+Protein yapısı tahmini (3D)
+
+Gelişmiş AI modelleri (AlphaFold/OpenFold, GNN, Transformers) ile protein folding tahmini.
+
+Drug discovery / ligand-protein etkileşimi tahmini
+
+Molekülleri graf olarak modelleyip, protein-ligand binding scoring ile olası ilaç adaylarını önermek.
+
+Explainable AI
+
+Modelin neden bu tahminleri yaptığını yorumlamak, biyolojik anlamda çıkarım yapmak.
+
+Hedef Çıktılar:
+
+3D protein yapısı ve folding görselleştirmesi
+
+Önerilen ligand/protein etkileşimleri ve binding affinity skorları
+
+Modelin tahminlerini yorumlayan XAI görselleştirmeleri
+
+CV ve portföyde “state-of-the-art AI + computational biology” projesi olarak öne çıkacak bir sistem
+
+2️⃣ Veri Setleri ve Kaynaklar
+Protein Verisi
+
+PDB (Protein Data Bank): Bilinen protein 3D yapıları
+
+AlphaFold DB: Bilinmeyen protein yapıları için tahminler
+
+UniProt: Amino acid dizileri ve anotasyonlar
+
+Alzheimer özel veri: Amyloid-beta ve tau proteinleri
+
+Ligand / Molekül Verisi
+
+ZINC Database: Drug-like küçük moleküller
+
+PubChem: Biyolojik aktivite verileri
+
+BindingDB: Protein-ligand binding affinities
+
+Ek Kaynaklar
+
+ChEMBL: Molekül-protein etkileşimleri
+
+DrugBank: Alzheimer ile ilişkili ilaç verileri
+
+3️⃣ Teknoloji Yığını (High-Tech CV Odaklı)
+Modelleme ve AI
+
+PyTorch & PyTorch Geometric → GNN modelleri için
+
+TensorFlow/Keras → Alternatif protein CNN/Transformer modelleri
+
+OpenFold / AlphaFold → Protein folding tahmini
+
+HuggingFace Transformers → Protein dizileri için transformer tabanlı embedding
+
+RDKit → Moleküllerin graf temsili ve cheminformatics
+
+DeepChem → Drug discovery pipelines
+
+Explainable AI & Visualization
+
+SHAP & LIME → Protein-ligand etkileşim yorumlama
+
+GNNExplainer → Graph tabanlı explainability
+
+PyMol / NGLView / ChimeraX → 3D protein ve ligand görselleştirme
+
+Plotly / Matplotlib / Seaborn → Analitik görselleştirme
+
+Pipeline ve Veri İşleme
+
+Pandas / NumPy → Tabular veriler ve preprocessing
+
+Scikit-learn → Önişleme, feature engineering
+
+DGL (Deep Graph Library) → Graph tabanlı modeling
+
+BioPython → Protein ve DNA verisi işlemleri
+
+MLOps & Reproducibility
+
+Docker / Conda / Poetry → Ortam yönetimi ve reproducibility
+
+Weights & Biases (W&B) → Model takip ve hiperparametre optimizasyonu
+
+Optuna / Ray Tune → Hyperparameter tuning
+
+Deployment / Demo
+
+Streamlit / Gradio → Modeli interaktif demo olarak sunmak
+
+FastAPI / Flask → Backend API oluşturmak
+
+NGLView + Streamlit → 3D görselleştirme interaktif web demo
+
+4️⃣ Modelleme Adımları
+A) Protein Modeling
+
+Data Preparation
+
+PDB ve AlphaFold’dan protein 3D verilerini indir
+
+Amino acid dizilerini protein graph veya sequence embedding için hazırla
+
+Model
+
+GNN veya Graph Transformer: Amino acid grafı → 3D koordinatlar
+
+AlphaFold/OpenFold tabanlı model: Daha doğru folding tahmini
+
+Loss function: RMSD, TM-score
+
+Evaluation
+
+Bilinen protein yapılarıyla karşılaştırma
+
+3D görselleştirme (PyMol/NGLView)
+
+Hata analizi ve model tuning
+
+B) Drug Discovery / Protein-Ligand Binding Prediction
+
+Data Preparation
+
+Ligand molekülleri RDKit ile graph representation’a çevir
+
+Protein-ligand çiftlerini oluştur (dataset: BindingDB + ChEMBL)
+
+Model
+
+Graph Neural Network (GNN): Protein ve ligand grafı → binding score tahmini
+
+Optional: Graph Attention Network (GAT) ile etkileşim ağırlıkları belirleme
+
+Evaluation
+
+Metrics: RMSE, Pearson correlation, ROC-AUC
+
+XAI: SHAP veya GNNExplainer ile hangi amino acid ve ligand grupları etkili
+
+C) Multimodal Integration (Opsiyonel ama CV’de wow etkisi)
+
+Protein sequence embeddings + 3D folding features + ligand graphs → tek multimodal model
+
+Output: Olası ilaç adayları + tahmini binding score
+
+5️⃣ Hackathon / Proje Yol Haritası (4-6 hafta önerilir)
+Hafta 1–2: Keşif ve Baseline
+
+Protein ve ligand veri setlerini indir, temizle
+
+Basit GNN tabanlı protein folding modeli çalıştır
+
+Basit ligand scoring pipeline oluştur
+
+Hafta 3–4: Model Geliştirme
+
+AlphaFold/OpenFold ile folding doğruluğunu artır
+
+Ligand binding GNN modelini iyileştir
+
+Hyperparameter tuning (Optuna veya Ray Tune)
+
+Hafta 5: Explainable AI ve Görselleştirme
+
+SHAP/LIME/GNNExplainer ile yorumlama
+
+3D görselleştirme ile protein-ligand etkileşimlerini interaktif sunum
+
+Binding affinity skorlarını heatmap ve grafikleriyle raporla
+
+Hafta 6: Sonlandırma ve Sunum
+
+Notebook, model, ve görselleştirmeleri temiz ve reproducible hâle getir
+
+PDF rapor + opsiyonel 2dk demo video
+
+Model card: Bias, interpretability, limitations
+
+Streamlit/Gradio demo (interaktif prototip)
+
+6️⃣e Vurgu Noktaları
+
+"
+Developed a state-of-the-art AI pipeline for Alzheimer-related protein modeling and drug discovery combining AlphaFold-inspired 3D protein folding, Graph Neural Networks for protein-ligand binding prediction, and Explainable AI for model interpretability. Created interactive 3D visualizations and multimodal integration of protein sequences, structures, and ligands.
+"
+
+Portföy / GitHub:
+
+Reproducible Google Colab / Jupyter notebook
+
+Protein 3D görselleştirmeleri (PyMol/NGLView)
+
+Ligand binding skorları + SHAP/GNNExplainer yorumları
+
+Streamlit / Gradio demo
+
+7️⃣ Ekstra “wow faktörleri” 
+
+Multimodal model (sequence + structure + ligand graph) → benzersiz
+
+Explainable AI görselleştirmeleri ile bilimsel yorum
+
+Hyperparameter optimization ve reproducible MLOps pipeline
+
+Interaktif web demo ile sunum + hackathon puan avantajı
